@@ -3,8 +3,8 @@
 ## Документация
 
 * [План выполнения работ](https://github.com/SergheiKors/Diplom/blob/main/docs/Plan.md)
-* [Отчет о проведенном тестировании](https://github.com/SergheiKors/Diplom/blob/9c4ad2bb4249b9c805b13c731d10bf4144dc96eb/docs/Report.md)
-* [Отчет о проведенной автоматизации](https://github.com/SergheiKors/Diplom/blob/9c4ad2bb4249b9c805b13c731d10bf4144dc96eb/docs/Summary.md)
+* [Отчет о проведенном тестировании](https://github.com/SergheiKors/Diplom/blob/main/docs/Report.md)
+* [Отчет о проведенной автоматизации](https://github.com/SergheiKors/Diplom/blob/main/docs/Summary.md)
 
 
 
