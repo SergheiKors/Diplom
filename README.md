@@ -36,7 +36,7 @@
 1. С помощью Git cклонировать репозиторий командой git clone https://github.com/SergheiKors/Diplom.git;
 2. Запустить Docker;
 3. Открыть проект в IntelliJ IDEA;
-4. В терминале IntelliJ IDEA запустить необходимые базы данных и нужные контейнеры командой `docker-compose up`;
+4. В терминале IntelliJ IDEA запустить необходимые базы данных и нужные контейнеры командой `docker compose up`;
 6. В новой вкладке терминала ввести следующую команду:  
    `java "-Dspring.datasource.url=jdbc:mysql://localhost:3306/app" -jar aqa-shop.jar` для БД MySQL;  
    `java "-Dspring.datasource.url=jdbc:postgresql://localhost:5432/app" -jar aqa-shop.jar` для БД PostgreSQL;
@@ -46,8 +46,8 @@
 ### Для запуска автотестов:
 
 - В новой вкладке терминала ввести следующую команду:  
-  `./gradlew clean test "-D db.url=jdbc:mysql://localhost:3306/app"` для БД MySQL;  
-  `./gradlew clean test "-D db.url=jdbc:postgresql://localhost:5432/app"` для БД PostgreSQL;
+  `./gradlew clean test -D db.url="jdbc:mysql://localhost:3306/app"` для БД MySQL;  
+  `./gradlew clean test -D db.url="jdbc:postgresql://localhost:5432/app"` для БД PostgreSQL;
 
 ### Для просмотра отчетов по результатам тестирования:
 1. Сгенерировать отчет Allure, выполнив команду в терминале IDEA: ```./gradlew allureServe```
