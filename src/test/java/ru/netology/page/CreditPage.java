@@ -7,6 +7,7 @@ import ru.netology.data.CardInfo;
 import java.time.Duration;
 
 import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.Selenide.$;
 
 public class CreditPage {
@@ -16,12 +17,14 @@ public class CreditPage {
     private SelenideElement owner = $(byText("Владелец")).parent().$(".input__control");
     private SelenideElement cvc = $(byText("CVC/CVV")).parent().$(".input__control");
     private SelenideElement continueButton = $(byText("Продолжить"));
-    private SelenideElement cardNumberError = $(byText("Номер карты")).parent().$(".input__sub");
-    private SelenideElement monthError = $(byText("Месяц")).parent().$(".input__sub");
-    private SelenideElement yearError = $(byText("Год")).parent().$(".input__sub");
+    private SelenideElement cardNumberError = $(byText("Неверный формат"));
+    private SelenideElement cardZeroNumberError = $(byText("Неверный формат"));
+    private SelenideElement monthError = $(byXpath("/html/body/div/div/form/fieldset/div[2]/span/span[1]/span/span/span[3]"));
+    private SelenideElement yearError = $(byXpath("/html/body/div/div/form/fieldset/div[2]/span/span[2]/span/span/span[3]"));
     private SelenideElement expiredCardError = $(byText("Истек срок действия карты")).parent().$(".input__sub");
-    private SelenideElement ownerError = $(byText("Владелец")).parent().$(".input__sub");
-    private SelenideElement cvcError = $(byText("CVC/CVV")).parent().$(".input__sub");
+    private SelenideElement RussianownerError = $(byText("недопустимые символы"));
+    private SelenideElement ownerError = $(byXpath("/html/body/div/div/form/fieldset/div[3]/span/span[1]/span/span/span[3]"));
+    private SelenideElement cvcError = $(byXpath("/html/body/div/div/form/fieldset/div[3]/span/span[2]/span/span/span[3]"));
     private SelenideElement approvedForm = $(".notification_status_ok");
     private SelenideElement declinedForm = $(".notification_status_error");
 
@@ -61,6 +64,14 @@ public class CreditPage {
 
     public void checkOwnerError() {
         ownerError.shouldBe(Condition.visible);
+    }
+
+    public void checkRussianOwnerError() {
+        RussianownerError.shouldBe(Condition.visible);
+    }
+
+    public void checkCardZeroNumberError() {
+        cardZeroNumberError.shouldBe(Condition.visible);
     }
 
     public void checkCVCError() {
